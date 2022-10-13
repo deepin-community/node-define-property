@@ -1,0 +1,68 @@
+node-define-property (2.0.2+really+2.0.2-2) unstable; urgency=medium
+
+  * Team upload
+  * Ship example.js
+
+ -- Bastien Roucariès <rouca@debian.org>  Sat, 25 Sep 2021 11:51:37 +0000
+
+node-define-property (2.0.2+really+2.0.2-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ lintian-brush ]
+  * Set upstream metadata fields: Bug-Submit.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+
+  [ Bastien Roucariès ]
+  * Drop eembeding thus fix a vulnereability" (Closes: #994974).
+
+ -- Bastien Roucariès <rouca@debian.org>  Fri, 24 Sep 2021 09:17:33 +0000
+
+node-define-property (2.0.2+~cs3.0.2-1) unstable; urgency=medium
+
+  * Team upload
+  * Declare compliance with policy 4.5.0
+  * Bump debhelper compatibility level to 12
+  * Use pkg-js-tools auto test & install
+  * Use uscan checksum
+    Really 2.0.2+~1.0.0+~1.0.0+~1.0.2
+  * Add "Rules-Requires-Root: no"
+
+ -- Xavier Guimard <yadd@debian.org>  Wed, 13 May 2020 20:52:18 +0200
+
+node-define-property (2.0.2-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+  * Embed is-accessor-descriptor 1.0.0, is-data-descriptor 1.0.0 and
+    is-descriptor 1.0.2 instead of relying on packaged versions.
+    Closes: #892656
+  * Update Vcs fields for migration to https://salsa.debian.org/
+  * Update packaging:
+    - Bump dh compat to 11
+    - Bump std-ver to 4.3.0
+    - Fix nodejs binary
+
+ -- Paolo Greppi <paolo.greppi@libpf.com>  Wed, 30 Jan 2019 19:12:59 +0100
+
+node-define-property (1.0.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release.
+  * Update packaging:
+    - Use https in d/copyright's Format
+    - Bump dh compat to 10
+    - Clean d/rules
+    - Move to section javascript
+    - Bump std-ver to 4.1.1
+    - Bump d/watch to version 4
+    - Make autopkgtest run the installed code
+
+ -- Julien Puydt <julien.puydt@laposte.net>  Sat, 25 Nov 2017 10:10:12 +0100
+
+node-define-property (0.2.5-1) unstable; urgency=low
+
+  * Initial release (Closes: #840993)
+
+ -- Sruthi Chandran <srud@disroot.org>  Sun, 16 Oct 2016 23:22:28 +0530

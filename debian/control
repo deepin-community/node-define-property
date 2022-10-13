@@ -1,0 +1,29 @@
+Source: node-define-property
+Section: javascript
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Sruthi Chandran <srud@disroot.org>
+Build-Depends: debhelper-compat (= 13)
+ , mocha <!nocheck>
+ , node-isobject (>= 3.0.1) <!nocheck>
+ , node-is-descriptor (>= 1.0.2) <!nocheck>
+ , dh-sequence-nodejs
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/js-team/node-define-property
+Vcs-Git: https://salsa.debian.org/js-team/node-define-property.git
+Homepage: https://github.com/jonschlinkert/define-property
+Testsuite: autopkgtest-pkg-nodejs
+Rules-Requires-Root: no
+
+Package: node-define-property
+Architecture: all
+Depends: ${misc:Depends}
+ , node-isobject (>= 3.0.1)
+ , node-is-descriptor (>= 1.0.2)
+Description: Define property on an object
+ Define a non-enumerable property on an object.
+ Uses Reflect.defineProperty when available,
+ otherwise Object.defineProperty, depending on supported
+ javascript version.
+ .
+ Node.js is an event-based server-side JavaScript engine.

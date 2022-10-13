@@ -1,0 +1,79 @@
+From: Henry Roes Lie <henry.lie@hde.co.jp>
+Date: Tue, 17 Mar 2020 01:52:17 +0900
+Subject: Update dependencies to fix vulnerabilities - Update is-descriptor to
+ 3.0.0 - Update mocha to 7.1.0 - Add "enumerable" and "configurable" to test
+ cases to ensure it complies with new is-descriptor check.
+
+origin: https://github.com/jonschlinkert/define-property/commit/a8c28b3e13934d6f1e0d7482118dd587eaec3e34.patch
+forwarded: https://github.com/jonschlinkert/define-property/pull/6/commits/a8c28b3e13934d6f1e0d7482118dd587eaec3e34
+bug: https://github.com/jonschlinkert/define-property/pull/6/commits/a8c28b3e13934d6f1e0d7482118dd587eaec3e34
+bug-debian: https://bugs.debian.org/994974
+---
+ package.json | 4 ++--
+ test.js      | 6 ++++++
+ 2 files changed, 8 insertions(+), 2 deletions(-)
+
+diff --git a/package.json b/package.json
+index f8fd21c..030ea40 100644
+--- a/package.json
++++ b/package.json
+@@ -24,12 +24,12 @@
+     "test": "mocha"
+   },
+   "dependencies": {
+-    "is-descriptor": "^1.0.2",
++    "is-descriptor": "^3.0.0",
+     "isobject": "^3.0.1"
+   },
+   "devDependencies": {
+     "gulp-format-md": "^1.0.0",
+-    "mocha": "^3.5.3"
++    "mocha": "^7.1.0"
+   },
+   "keywords": [
+     "define",
+diff --git a/test.js b/test.js
+index 6ade2db..acb226d 100644
+--- a/test.js
++++ b/test.js
+@@ -29,6 +29,7 @@ describe('define', function() {
+     var obj = {bar: 'baz'};
+     define(obj, 'foo', {
+       configurable: true,
++      enumerable: false,
+       get: function() {
+         return this._val;
+       },
+@@ -45,6 +46,7 @@ describe('define', function() {
+     fixture.bar = 'baz';
+     define(fixture, 'foo', {
+       configurable: true,
++      enumerable: false,
+       set: function(key) {
+         define(this, '_val', this[key]);
+       },
+@@ -61,6 +63,7 @@ describe('define', function() {
+     fixture.bar = 'baz';
+     define(fixture, 'foo', {
+       configurable: true,
++      enumerable: false,
+       set: function(key) {
+         define(this, '_val', this[key]);
+       },
+@@ -77,6 +80,7 @@ describe('define', function() {
+     fixture.bar = 'baz';
+     define(fixture, 'foo', {
+       configurable: true,
++      enumerable: false,
+       set: function(key) {
+         define(this, '_val', this[key]);
+       },
+@@ -91,6 +95,8 @@ describe('define', function() {
+   it('should define a property with data descriptors:', function() {
+     var obj = {};
+     define(obj, 'foo', {
++      configurable: false,
++      enumerable: false,
+       writable: true,
+       value: 'bar'
+     });
